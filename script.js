@@ -21,27 +21,29 @@ document.addEventListener("DOMContentLoaded", () => {
         noButton.style.top = `${y}px`;
     });
 
-    function createHearts() {
-    for (let i = 0; i < 50; i++) { // Más corazones
+function createHearts() {
+    for (let i = 0; i < 50; i++) { // Generar 50 corazones
         setTimeout(() => {
             const heart = document.createElement("div");
             heart.innerHTML = "❤️";
             heart.classList.add("heart");
-            
-            // Posición aleatoria en toda la pantalla
-            heart.style.left = `${Math.random() * 100}vw`;
-            heart.style.top = `${Math.random() * 100}vh`; 
-            
-            // Tamaño aleatorio para más variedad
-            heart.style.fontSize = `${Math.random() * 20 + 10}px`;
 
-            heart.style.animationDuration = `${Math.random() * 2 + 2}s`; // Diferentes velocidades
+            // Posición aleatoria en la parte superior
+            heart.style.left = `${Math.random() * 100}vw`;
+            heart.style.top = `-10px`; // Empiezan fuera de la pantalla arriba
+
+            // Tamaño aleatorio para variedad
+            heart.style.fontSize = `${Math.random() * 30 + 10}px`;
+
+            // Velocidad aleatoria
+            heart.style.animationDuration = `${Math.random() * 3 + 2}s`;
+
             document.getElementById("heart-container").appendChild(heart);
 
             setTimeout(() => {
                 heart.remove();
-            }, 4000); // Desaparecen después de 4 segundos
-        }, i * 100); // Salen poco a poco
+            }, 5000); // Los corazones desaparecen después de caer
+        }, i * 200); // Salen poco a poco
     }
 }
 });
