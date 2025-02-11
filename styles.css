@@ -55,8 +55,8 @@ button {
 }
 
 #photo {
-    width: 150px; /* Hacemos la imagen más pequeña */
-    border-radius: 10px;
+    width: 200px; /* Hacemos la imagen más pequeña */
+    border-radius: 15px;
     margin-top: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
